@@ -1,0 +1,5 @@
+macro(test_program name)
+  add_test(${name} ${name})
+  add_executable(${name} ${name}.c)
+  target_link_libraries(${name} vx_library ${PROGRAM_LIBS})
+endmacro(test_program)

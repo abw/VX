@@ -1,0 +1,115 @@
+Instructions for Building and Installing the VX Module Toolkit
+--------------------------------------------------------------
+
+You first need to install CMake which handles the configuration, build and 
+installation process.  You can download it from here:
+
+    http://www.cmake.org/cmake/resources/software.html
+
+Or you can install it using your favourite package manager (apt, ports, etc).
+
+If you haven't already checked out the VX source then you need to do that 
+next.
+
+    $ git clone git://github.com/abw/VX.git
+    $ cd VX
+
+It is recommended that you use the 'build' sub-directory for building VX.
+Run cmake in this directory, specifying '..' as an argument so that it can
+find the relevant configuration files in the top-level VX directory.
+
+    $ cd build
+    $ cmake ..
+
+NOTE: CMake provides various different commands to use, depending on your
+operating system.  For example, on Unix-like systems you can use 'ccmake'
+instead of 'cmake' to enable the configuration manager.  On Windows there's
+the CMakeSetup.exe application which provides a point-and-clicky thing so 
+that you don't have to dirty yourself with the command line.  See this page 
+for further information:
+
+    http://www.cmake.org/cmake/help/runningcmake.html
+
+One useful option you might want to know about is the one to specify a 
+different installation path:
+
+    $ cmake -DCMAKE_INSTALL_PREFIX:PATH=/installation/path
+
+Then run make, make test, and make install (for which you'll probably need 
+sudo to grant you write permission to the installation location).
+
+    $ make
+    $ make test
+    $ sudo make install
+
+Running 'make install' will install the VX library, header files and the 
+vx program on your system.  
+
+You should be able to compile the VX library into your own C programs.
+Here's a simple example as a proof of concept:
+
+    #include <stdio.h>
+    #include <vx.h>
+
+    int main(int argc, char **argv, char **env) {
+        VX vx = VX_new();
+        printf("created a VX engine: %p\n", vx);
+        
+        /* do stuff */
+        
+        VX_free(vx);
+        return 0;
+    }
+
+Assuming the above is saved in 'example.c', you would compile and link it
+using a command something like this:
+
+    $ gcc -o example -lvx example.c
+
+
+
+Platform-Specific Notes
+-----------------------
+
+Linux
+-----
+
+If you get a CMake error saying something like this:
+
+  your CXX compiler: "CMAKE_CXX_COMPILER-NOTFOUND" was not found.
+
+Then it probably means you haven't got the C++ compiler extensions
+for gcc installed.  We're not using C++, but I haven't figured out
+how to tell CMake that.  For now, just do this (or equivalent)
+
+  $ sudo apt-get install g++
+
+You'll also need the readline library and development header files
+
+  $ sudo apt-get install libreadline-dev
+
+
+OSX
+---
+
+You'll need to install the developer tools that come on the operating
+system DVD provided with your machine (or download them from Apple's web 
+site).
+
+It is also recommended that you install macports.  See:
+
+    http://macports.org
+
+With macports installed you can then install the readline library and 
+cmake like so:
+
+    $ sudo port install readline cmake
+
+If you've already got readline installed, or if you're using some other
+package manager (e.g. fink/apt) then you don't need macports.
+
+Then you should be good to go.
+
+
+-- Andy Wardley (abw), January 2011
+

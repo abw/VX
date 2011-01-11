@@ -1,0 +1,59 @@
+#ifndef VX_CONFIG_H
+#define VX_CONFIG_H
+
+#define VX_VERSION        "@VX_VERSION_MAJOR@.@VX_VERSION_MINOR@"
+#define VX_VERSION_MAJOR   @VX_VERSION_MAJOR@
+#define VX_VERSION_MINOR   @VX_VERSION_MINOR@
+#define VX_NAME           "@VX_NAME@"
+#define VX_AUTHOR         "@VX_AUTHOR@"
+#define VX_EMAIL          "@VX_EMAIL@"
+#define VX_URL            "@VX_URL@"
+#define VX_PROMPT         "@VX_NAME@"
+#define VX_DIR            "@VX_DIR@"
+#define VX_SOURCE_DIR     "@VX_SOURCE_DIR@"
+#define VX_TEST_DIR       "@VX_TEST_DIR@"
+#define VX_MODULE_DIR     "@VX_MODULE_DIR@"
+#define VX_MODULE_EXT     "@VX_MODULE_EXT@"
+
+
+/*--------------------------------------------------------------------------
+ * Header files
+ *--------------------------------------------------------------------------*/
+
+#cmakedefine VX_HAVE_DIRENT_H
+#cmakedefine VX_HAVE_INTTYPES_H
+#cmakedefine VX_HAVE_MEMORY_H
+#cmakedefine VX_HAVE_STDINT_H
+#cmakedefine VX_HAVE_STDLIB_H
+#cmakedefine VX_HAVE_STRING_H
+#cmakedefine VX_HAVE_STRINGS_H
+#cmakedefine VX_HAVE_SYS_STAT_H
+#cmakedefine VX_HAVE_SYS_TYPES_H
+#cmakedefine VX_HAVE_UNISTD_H
+#cmakedefine VX_HAVE_WINDOWS_H
+
+
+/*--------------------------------------------------------------------------
+ * Library functions
+ *--------------------------------------------------------------------------*/
+
+#cmakedefine VX_HAVE_BCOPY
+#cmakedefine VX_HAVE_MEMMOVE
+#cmakedefine VX_HAVE_MEMSET
+#cmakedefine VX_HAVE_STRDUP
+#cmakedefine VX_HAVE_STRERROR
+#cmakedefine VX_HAVE_STRSTR
+#cmakedefine VX_HAVE_STRTOL
+#cmakedefine VX_HAVE_STRTOLL
+#cmakedefine VX_HAVE_STRTOQ
+
+
+/*--------------------------------------------------------------------------
+ * Additional libraries
+ *--------------------------------------------------------------------------*/
+
+#cmakedefine VX_HAVE_READLINE
+
+
+
+#endif /* VX_CONFIG_H */
