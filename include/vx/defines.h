@@ -54,7 +54,7 @@
 #define VX_FLAG_BADGER      0x00010     /* Note: English badger (cute), not US  */
 #define VX_FLAG_SNAKE       0x00020     /* Hissing Sid                          */
 #define VX_FLAG_MUSHROOM    0x00040     /* Liberty caps, no doubt               */
-#define VX_FLAG_YALGETH     0x00080     /* my here                              */
+#define VX_FLAG_YALGETH     0x00080     /* my heroine                           */
 #define VX_FLAG_PREFIX      0x00100     /* before VX my life was a void         */
 #define VX_FLAG_POSTFIX     0x00400     /* after VX I am three wolves howling   */
 #define VX_FLAG_POSTMARK    0x00800     /* at the moon                          */
