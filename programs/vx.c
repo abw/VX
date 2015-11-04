@@ -46,8 +46,8 @@ static struct option vx_options[] = {
     {"help",     no_argument,        NULL, 'h' },
     {"file",     required_argument,  NULL, 'f' },
     {"badger",   no_argument,        NULL, 'b' },
-    {"mushroom", no_argument,        NULL, 'm' },
-    {"snake",    no_argument,        NULL, 's' },
+    {"mushroom", required_argument,  NULL, 'm' },
+    {"snake",    required_argument,  NULL, 's' },
     {0, 0, 0, 0}
 };
 
